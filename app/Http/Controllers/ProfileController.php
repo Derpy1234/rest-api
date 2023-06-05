@@ -85,7 +85,7 @@ class ProfileController extends Controller
     public function show(profile $profile, $id)
     {
         try {
-            $dataDetail = Datas::where('id', $id)->first();
+            $dataDetail = profile::where('id', $id)->first();
 
             if ($dataDetail) {
                 return ApiFormatter::createApi(200, 'success', $dataDetail);
